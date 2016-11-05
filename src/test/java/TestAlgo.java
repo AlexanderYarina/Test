@@ -1,6 +1,8 @@
 import utils.Algorithms;
 
 import java.io.IOException;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Created by Alex on 04.11.2016.
@@ -12,7 +14,13 @@ public class TestAlgo {
 
     public static void main(String[] args) throws IOException {
         Algorithms algo = new Algorithms();
+
         int res = algo.findMaxChainUnits(INPUT, OUTUT);
-        System.out.println(res);
+
+        List<Integer> list = algo.allIntFactorsNumber(100);
+        Collections.sort(list);
+        for (Integer integer : list) {
+            System.out.println(integer);
+        }
     }
 }

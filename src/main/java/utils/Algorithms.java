@@ -1,6 +1,8 @@
 package utils;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Algorithms {
     public int findMaxChainUnits(String fileInput, String fileOutput) throws IOException {
@@ -18,6 +20,21 @@ public class Algorithms {
             writeString(strArray[cellNum], fileOutput);
         }
         return cellNum;
+    }
+
+    public List<Integer> allIntFactorsNumber(int num) {
+        int temp = (int) Math.sqrt(num);
+        List numList = new ArrayList();
+        for (int i = 1; i <= temp; i++) {
+            System.out.println(i);
+            if (num % i == 0) {
+                numList.add(i);
+                if (i != num / i) {
+                    numList.add(num / i);
+                }
+            }
+        }
+        return numList;
     }
 
     private String readString(String fileName){
