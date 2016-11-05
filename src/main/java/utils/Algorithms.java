@@ -17,7 +17,6 @@ public class Algorithms {
         if (maxCount > 0) {
             writeString(strArray[cellNum], fileOutput);
         }
-
         return cellNum;
     }
 
