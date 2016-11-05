@@ -20,17 +20,23 @@ public class Algorithms {
         return cellNum;
     }
 
-    private String readString(String fileName) throws IOException {
+    private String readString(String fileName){
         File file = new File(fileName);
-        FileReader fr = new FileReader(file);
-        BufferedReader br = new BufferedReader(fr);
-        String line;
         StringBuilder sb = new StringBuilder();
-        while ((line = br.readLine()) != null) {
-            sb.append(line);
+        BufferedReader br = null;
+        try {
+            br = new BufferedReader(new FileReader(file.getAbsoluteFile()));
+            try {
+                String line;
+                while ((line = br.readLine()) != null) {
+                    sb.append(line);
+                }
+            }finally {
+                br.close();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        br.close();
-        fr.close();
         return sb.toString();
     }
 
