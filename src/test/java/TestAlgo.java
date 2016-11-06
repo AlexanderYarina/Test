@@ -16,11 +16,13 @@ public class TestAlgo {
         Algorithms algo = new Algorithms();
 
         int res = algo.findMaxChainUnits(INPUT, OUTUT);
+        System.out.println(res);
 
         List<Integer> list = algo.allIntFactorsNumber(100);
         Collections.sort(list);
         for (Integer integer : list) {
             System.out.println(integer);
         }
+
     }
 }

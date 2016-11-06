@@ -26,7 +26,6 @@ public class Algorithms {
         int temp = (int) Math.sqrt(num);
         List numList = new ArrayList();
         for (int i = 1; i <= temp; i++) {
-            System.out.println(i);
             if (num % i == 0) {
                 numList.add(i);
                 if (i != num / i) {
